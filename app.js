@@ -7,13 +7,13 @@ var greenBox = document.querySelector('.green');
 var blueBox = document.querySelector('.blue');
 var scoreDisplay = document.getElementById('score');
 var timer = document.getElementById('timer');
+var gameContainer = document.querySelector('.container')
 
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue'];
 var score = 0;
 var counter = 0;
-var time = 0; 
 
 // Initial Game State 
 boxChanger.style.backgroundColor = "red"
@@ -37,12 +37,32 @@ var changeCentralBoxColor = function() {
        
   
 }
+var time = 5;
+var timerFunc = setInterval(function() {
+    console.log(time);
+    time--
+    if(time === 0) {
+        console.log('Game Over')
+        clearInterval(timerFunc)
+       document.body.innerHTML = ''
+       var el = document.createElement('h1');
+       el.setAttribute('id', 'endScreen')
+       el.innerText = 'GAME OVER';
+      document.body.appendChild(el)
+    }
+
+    timer.innerHTML = `Time Left: ${time}`
+
+
+}, 1000)
+
 
 
 // These Functions checks if the background color of the keyboard is the same as the background color of the central box
 var checkMatchRed = function() {
 if(redBox.style.backgroundColor === boxChanger.style.backgroundColor) {
     changeCentralBoxColor()
+    time += 2
     score++
     keepScore()
     
@@ -51,6 +71,7 @@ if(redBox.style.backgroundColor === boxChanger.style.backgroundColor) {
 var checkMatchYellow = function() {
 if(yellowBox.style.backgroundColor === boxChanger.style.backgroundColor) {
     changeCentralBoxColor()
+    time +=2
     score++
     keepScore()
 } 
@@ -59,6 +80,7 @@ var checkMatchGreen = function() {
   
 if(greenBox.style.backgroundColor === boxChanger.style.backgroundColor) {
     changeCentralBoxColor()
+    time += 2
     score++
     keepScore()
 } 
@@ -67,6 +89,7 @@ var checkMatchBlue = function() {
   
 if(blueBox.style.backgroundColor === boxChanger.style.backgroundColor) {
     changeCentralBoxColor()
+    time +=2
     score++
     keepScore()
 } 

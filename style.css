@@ -64,3 +64,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.disappear {
+    display: none;
+}
+
+#endScreen{
+    font-size: 10rem;
+    text-align: center;
+    margin-top: 200px;
+}
