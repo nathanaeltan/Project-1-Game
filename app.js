@@ -5,12 +5,15 @@ var redBox = document.querySelector('.red');
 var yellowBox = document.querySelector('.yellow');
 var greenBox = document.querySelector('.green');
 var blueBox = document.querySelector('.blue');
+var scoreDisplay = document.getElementById('score');
+var timer = document.getElementById('timer');
 
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue'];
 var score = 0;
 var counter = 0;
+var time = 0; 
 
 // Initial Game State 
 boxChanger.style.backgroundColor = "red"
@@ -23,8 +26,9 @@ blueBox.style.backgroundColor="blue";
 // This function activates if there is a match in colors, it will change the color of the central box
 var changeCentralBoxColor = function() {
   
-    
-    counter ++
+        var ranNum = Math.floor(Math.random() * 5)
+    counter = ranNum
+
     if(counter === centralColors.length) {
         counter = 0;
     }
@@ -35,37 +39,46 @@ var changeCentralBoxColor = function() {
 }
 
 
-// This Function checks if the background color of the keyboard is the same as the background color of the central box
+// These Functions checks if the background color of the keyboard is the same as the background color of the central box
 var checkMatchRed = function() {
-    console.log(redBox.style.backgroundColor)
-    console.log(boxChanger.style.backgroundColor)
 if(redBox.style.backgroundColor === boxChanger.style.backgroundColor) {
-    console.log('match')
     changeCentralBoxColor()
+    score++
+    keepScore()
+    
 } 
 }
 var checkMatchYellow = function() {
-    console.log(yellowBox.style.backgroundColor)
-    console.log(boxChanger.style.backgroundColor)
 if(yellowBox.style.backgroundColor === boxChanger.style.backgroundColor) {
-    console.log('match')
     changeCentralBoxColor()
+    score++
+    keepScore()
 } 
 }
 var checkMatchGreen = function() {
   
 if(greenBox.style.backgroundColor === boxChanger.style.backgroundColor) {
-    console.log('match')
     changeCentralBoxColor()
+    score++
+    keepScore()
 } 
 }
 var checkMatchBlue = function() {
   
 if(blueBox.style.backgroundColor === boxChanger.style.backgroundColor) {
-    console.log('match')
     changeCentralBoxColor()
+    score++
+    keepScore()
 } 
 }
+
+// This Function Keeps Score 
+var keepScore = function() {
+    scoreDisplay.innerHTML = `Score: ${score}`
+}
+
+
+
 
 
 

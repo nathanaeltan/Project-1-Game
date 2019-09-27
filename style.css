@@ -51,3 +51,16 @@
 .blue {
     background-color: blue;
 }
+
+#score,
+#timer {
+    font-size: 2rem;
+    padding-top: 10px;
+}
+
+
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
