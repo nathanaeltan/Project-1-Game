@@ -6,6 +6,7 @@ var timer = document.getElementById('timer');
 var gameContainer = document.querySelector('.container')
 var keys = document.querySelectorAll('.key')
 var levelTwo = document.querySelectorAll('.second')
+var keyBoard = document.querySelector('.keyboard')
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink' ];
@@ -20,15 +21,28 @@ var changeCentralBoxColor = function () {
     var counter = 0;
     var ranNum = Math.floor(Math.random() * centralColors.length)
     
-    if(score > 0 && score < 10){
+    if(score > 0 && score < 4){
         ranNum = Math.floor(Math.random() * 4)
         counter = ranNum
-    } else if(score >= 10) {
+    } else if(score >= 5 && score < 9) {
         levelTwo.forEach((key) => {
             key.classList.remove('disappear')
         })
         counter = ranNum
        
+    } else if(score >= 10) {
+        keys.forEach((key) => {
+            key.style.borderRadius = "50%";
+           key.style.width = "300px"
+           key.style.height = "300px"
+           key.style.margin = "30px"
+           key.style.position = "relative" 
+           key.style.top = Math.floor((Math.random() * 100) + 1)+"px";
+           key.style.left = Math.floor((Math.random() * 600) + 1)+"px";
+           key.style.right = Math.floor((Math.random() * 600) + 1)+"px";
+           key.style.bottom = Math.floor((Math.random() * 600) + 1)+"px";
+        })
+        counter = ranNum
     }
 
     boxChanger.style.backgroundColor = centralColors[counter];

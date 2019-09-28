@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 .container {
-    display: flex;
+    display: flex; 
     justify-content: center;
-    margin: 100px 0;
-    border: 1px solid black;
+    height: 1000px;
 }
 
 .central-color {
@@ -20,6 +19,7 @@
 }
 .game-container {
     width: 98%;
+    height: 100%;
 }
 .main-container {
     position: absolute;
@@ -34,48 +34,29 @@
 }
 
 .keyboard {
-    margin-top: 50px;
-    display: flex;
+    margin-top: 100px;
+    display: flex; 
     width: 100%;
+ justify-content: center;
+ align-items: flex-end;
     
 }
 
 .keyboard > div {
-    flex: 1;
+    /* flex: 1; */
+
 }
+
 .key {
     height: 300px;
     width: 300px;
+    margin-left: 10px;
 }
-.red {
-    /* background-color: red; */
-}
-.yellow {
-    /* background-color: yellow; */
-}
-.green {
-    /* background-color: green; */
-}
-.blue {
-    /* background-color: blue; */
-}
-
-.pink {
-    /* background-color: pink; */
-
-}
-
-.orange {
-    /* background-color: orange; */
-}
-
 #score,
 #timer {
     font-size: 2rem;
     padding-top: 10px;
 }
-
-
 
 .top {
     display: flex;
