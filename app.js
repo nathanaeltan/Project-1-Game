@@ -6,10 +6,11 @@ var timer = document.getElementById('timer');
 var gameContainer = document.querySelector('.container')
 var keys = document.querySelectorAll('.key')
 var levelTwo = document.querySelectorAll('.second')
+var levelThree = document.querySelectorAll('.third')
 var keyBoard = document.querySelector('.keyboard')
 
 // Global Variables
-var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink' ];
+var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise' ];
 var score = 0;
 
 // Initial Game State 
@@ -29,19 +30,26 @@ var changeCentralBoxColor = function () {
         levelTwo.forEach((key) => {
             key.classList.remove('disappear')
         })
+        ranNum = Math.floor(Math.random() * 6)
         counter = ranNum
     //    Level 3 Score 21-30
     } else if(score >= 10) {
+     
+        levelThree.forEach((key) => {
+            key.classList.remove('disappear')
+        })
         keys.forEach((key) => {
+        
             key.style.borderRadius = "50%";
-           key.style.width = "300px"
-           key.style.height = "300px"
-          
-           key.style.position = "relative" 
-           key.style.top = Math.floor((Math.random() * 100) + 1)+"px";
-           key.style.left = Math.floor((Math.random() * 400) + 1)+"px";
-           key.style.right = Math.floor((Math.random() * 400) + 1)+"px";
-           key.style.bottom = Math.floor((Math.random() * 600) + 1)+"px";
+           key.style.width = "150px"
+           key.style.height = "150px"
+           key.style.position = "absolute" 
+           key.style.marginLeft = "auto" 
+           key.style.marginRight = "auto" 
+           key.style.top = Math.floor((Math.random() * 80) + 1)+"px";
+           key.style.left = Math.floor((Math.random() * 1400) + 3)+"px";
+           key.style.right = Math.floor((Math.random() * 1500) + 5)+"px";
+           key.style.bottom = Math.floor((Math.random() * 100) + 1)+"px";
         })
         counter = ranNum
     }
@@ -52,7 +60,7 @@ var changeCentralBoxColor = function () {
 
 
 // Function Timer **** Reactivate it when you want to Play 
-var time = 200;
+var time = 20000;
 var timerFunc = setInterval(function () {
    
     time--
@@ -62,7 +70,8 @@ var timerFunc = setInterval(function () {
         document.body.innerHTML = ''
         var el = document.createElement('h1');
         el.setAttribute('id', 'endScreen')
-        el.innerText = 'GAME OVER';
+        el.innerText = `GAME OVER
+        Score: ${score}`;
         document.body.appendChild(el)
     }
 
@@ -77,7 +86,7 @@ var timerFunc = setInterval(function () {
 
 
 
-// This Function Keeps Score 
+// This Function displays Score 
 var keepScore = function () {
     scoreDisplay.innerHTML = `Score: ${score}`
 }
@@ -95,8 +104,8 @@ var checkMatch = function (event) {
             score--
             time --
             keepScore()
+    
         }
-       
 
     }
 
@@ -107,5 +116,8 @@ keys.forEach((key, index) => {
     key.style.backgroundColor = centralColors[index]
 })
 
+var shake = function(e){
+
+}
 
 
