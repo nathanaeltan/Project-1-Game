@@ -1,16 +1,11 @@
 // DOM ELEMENTS
 
 var boxChanger = document.querySelector('.central-color');
-var redBox = document.querySelector('.red');
-var yellowBox = document.querySelector('.yellow');
-var greenBox = document.querySelector('.green');
-var blueBox = document.querySelector('.blue');
-var pinkBox = document.querySelector('.pink');
-var orangeBox = document.querySelector('.orange');
 var scoreDisplay = document.getElementById('score');
 var timer = document.getElementById('timer');
 var gameContainer = document.querySelector('.container')
 var keys = document.querySelectorAll('.key')
+var levelTwo = document.querySelectorAll('.second')
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink' ];
@@ -19,30 +14,30 @@ var score = 0;
 
 // Initial Game State 
 boxChanger.style.backgroundColor = "red"
-redBox.style.backgroundColor = "red";
-yellowBox.style.backgroundColor = "yellow";
-greenBox.style.backgroundColor = "green";
-blueBox.style.backgroundColor = "blue";
-pinkBox.style.backgroundColor = "pink";
-orangeBox.style.backgroundColor = "orange";
-
 
 // This function activates if there is a match in colors, it will change the color of the central box
 var changeCentralBoxColor = function () {
     var counter = 0;
     var ranNum = Math.floor(Math.random() * centralColors.length)
-    counter = ranNum
-
-    if (counter === centralColors.length) {
-        counter = 0;
+    
+    if(score > 0 && score < 10){
+        ranNum = Math.floor(Math.random() * 4)
+        counter = ranNum
+    } else if(score >= 10) {
+        levelTwo.forEach((key) => {
+            key.classList.remove('disappear')
+        })
+        counter = ranNum
+       
     }
 
     boxChanger.style.backgroundColor = centralColors[counter];
-
-
 }
+
+
+
 // Function Timer **** Reactivate it when you want to Play 
-var time = 20;
+var time = 200;
 var timerFunc = setInterval(function () {
    
     time--
@@ -63,7 +58,6 @@ var timerFunc = setInterval(function () {
 
 
 
-// These Functions checks if the background color of the keyboard is the same as the background color of the central box
 
 
 
@@ -72,6 +66,9 @@ var timerFunc = setInterval(function () {
 var keepScore = function () {
     scoreDisplay.innerHTML = `Score: ${score}`
 }
+
+// This Function checks if the background color of the keyboard is the same as the background color of the central box
+
 var checkMatch = function (event) {
     var whichBox = event.target.style.backgroundColor
         if (whichBox=== boxChanger.style.backgroundColor) {
@@ -79,19 +76,21 @@ var checkMatch = function (event) {
             time += 2
             score++
             keepScore()
+        } else {
+            score--
+            time --
+            keepScore()
         }
        
 
     }
 
-
-
-
-
 // When I click on the keyboard, it will check if the background color of the keyboard and the background color of the boxChanger is the same. If it is the same, the Central Box will change Color, and a score will be added. 
 
 keys.forEach((key, index) => {
     key.addEventListener('click', checkMatch)
+    key.style.backgroundColor = centralColors[index]
 })
+
 
 

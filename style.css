@@ -6,7 +6,7 @@
 .container {
     display: flex;
     justify-content: center;
-    margin: 100px 50px;
+    margin: 100px 0;
     border: 1px solid black;
 }
 
@@ -17,6 +17,9 @@
     color: red;
     text-align: center;
     
+}
+.game-container {
+    width: 98%;
 }
 .main-container {
     position: absolute;
@@ -33,7 +36,12 @@
 .keyboard {
     margin-top: 50px;
     display: flex;
-    justify-content: center;
+    width: 100%;
+    
+}
+
+.keyboard > div {
+    flex: 1;
 }
 .key {
     height: 300px;
@@ -46,18 +54,19 @@
     /* background-color: yellow; */
 }
 .green {
-    background-color: green;
+    /* background-color: green; */
 }
 .blue {
-    background-color: blue;
+    /* background-color: blue; */
 }
+
 .pink {
-    background-color: pink;
+    /* background-color: pink; */
 
 }
 
 .orange {
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 #score,
