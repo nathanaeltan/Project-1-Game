@@ -21,19 +21,19 @@ var changeCentralBoxColor = function () {
     var counter = 0;
     var ranNum = Math.floor(Math.random() * centralColors.length)
     // Level 1 Score 0 - 10
-    if(score > 0 && score < 4){
+    if(score > 0 && score < 9){
         ranNum = Math.floor(Math.random() * 4)
         counter = ranNum
 
         // Level 2 Score 11 - 20
-    } else if(score >= 5 && score < 9) {
+    } else if(score >= 9 && score < 19) {
         levelTwo.forEach((key) => {
             key.classList.remove('disappear')
         })
         ranNum = Math.floor(Math.random() * 6)
         counter = ranNum
     //    Level 3 Score 21-30
-    } else if(score >= 10) {
+    } else if(score >= 19 && score < 29) {
      
         levelThree.forEach((key) => {
             key.classList.remove('disappear')
@@ -52,6 +52,18 @@ var changeCentralBoxColor = function () {
            key.style.bottom = Math.floor((Math.random() * 100) + 1)+"px";
         })
         counter = ranNum
+    } else if(score >= 29) {
+        keys.forEach((key) => {
+            key.style.width = "70px";
+            key.style.height = "70px";
+            key.style.marginLeft = "auto" 
+           key.style.marginRight = "auto" 
+           key.style.top = Math.floor((Math.random() * 80) + 1)+"px";
+           key.style.left = Math.floor((Math.random() * 1400) + 3)+"px";
+           key.style.right = Math.floor((Math.random() * 1500) + 5)+"px";
+           key.style.bottom = Math.floor((Math.random() * 100) + 1)
+           counter = ranNum
+        })
     }
 
     boxChanger.style.backgroundColor = centralColors[counter];
@@ -99,10 +111,19 @@ var checkMatch = function (event) {
             changeCentralBoxColor()
             time += 2
             score++
+            scoreDisplay.classList.add('plusscore');
+            setTimeout(function() {
+                scoreDisplay.classList.remove('plusscore')
+            }, 300);
             keepScore()
+            
         } else {
             score--
             time --
+            scoreDisplay.classList.add('minusscore');
+            setTimeout(function() {
+                scoreDisplay.classList.remove('minusscore')
+            }, 300);
             keepScore()
     
         }
@@ -116,8 +137,6 @@ keys.forEach((key, index) => {
     key.style.backgroundColor = centralColors[index]
 })
 
-var shake = function(e){
 
-}
 
 
