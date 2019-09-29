@@ -51,6 +51,12 @@
     width: 100%;
 }
 
+.left {
+    display: flex;
+}
+.right {
+    display: flex;
+}
 .keyboard {
 	padding-top: 70px;
 	display: flex;
