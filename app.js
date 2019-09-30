@@ -8,8 +8,7 @@ var keys = document.querySelectorAll('.key')
 var levelTwo = document.querySelectorAll('.second')
 var levelThree = document.querySelectorAll('.third')
 var keyBoard = document.querySelector('.keyboard')
-var columnOne = document.querySelectorAll('.col1');
-var columnTwo = document.querySelectorAll('.col2');
+var sounds = document.querySelectorAll('.sound')
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise'];
@@ -55,8 +54,8 @@ var changeCentralBoxColor = function () {
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
-            key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
-            key.style.right = Math.floor((Math.random() * 1500) + 5) + "px";
+            key.style.left = Math.floor((Math.random() * 1900) + 3) + "px";
+            key.style.right = Math.floor((Math.random() * 1900) + 5) + "px";
             key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
         })
         counter = ranNum
@@ -69,7 +68,7 @@ var changeCentralBoxColor = function () {
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
             key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
             key.style.right = Math.floor((Math.random() * 1500) + 5) + "px";
-            key.style.bottom = Math.floor((Math.random() * 100) + 1)
+            key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
             counter = ranNum
         })
     }
@@ -117,6 +116,7 @@ var checkMatch = function (event) {
     var whichBox = event.target.style.backgroundColor
     if (whichBox === boxChanger.style.backgroundColor) {
         changeCentralBoxColor()
+        
         time += 2
         score++
         
@@ -129,6 +129,7 @@ var checkMatch = function (event) {
     } else {
         score--
         time--
+        key.style.backgroundColor = "red";
         scoreDisplay.classList.add('minusscore');
         setTimeout(function () {
             scoreDisplay.classList.remove('minusscore')
@@ -143,10 +144,10 @@ var checkMatch = function (event) {
 
 keys.forEach((key, index) => {
     key.addEventListener('click', checkMatch)
+    key.addEventListener('click', function() {
+        sounds[index].currentTime = 0;
+        sounds[index].play();
+    })
     key.style.backgroundColor = centralColors[index]
 })
 
-var columnLevel = function () {
-
-
-}
