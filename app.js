@@ -16,15 +16,18 @@ var startBtn = document.getElementById('start')
 var startSection = document.querySelector('.startDiv')
 var resetBtn = document.getElementById('reset')
 
+
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise', 'deeppink', 'olive'];
 var score = 0;
+var gameRun = false;
 
 // Initial Game State 
 boxChanger.style.backgroundColor = centralColors[Math.floor(Math.random() * 4)]
 
 // Starter Function
 startBtn.addEventListener('click', function() {
+    gameRun = true;
     gameContainer.classList.remove('disappear');
     startSection.classList.add('disappear')
 })
@@ -116,7 +119,7 @@ var changeCentralBoxColor = function () {
             counter = Math.floor(Math.random() * 8)
         })
         
-    } else if(score >= 49 && score <59) {
+    } else if(score >= 49 ) {
         keys.forEach((key) => {
             key.style.width = "70px";
             key.style.height = "70px";
@@ -136,10 +139,12 @@ var changeCentralBoxColor = function () {
 
 
 // Function Timer **** Reactivate it when you want to Play 
-var time = 3;
+var time =20000;
 var timerFunc = setInterval(function () {
-
-    time--
+    if(gameRun === true) {
+        time--
+    }
+    
     if (time <= 0) {
         console.log('Game Over')
         clearInterval(timerFunc)
@@ -147,7 +152,7 @@ var timerFunc = setInterval(function () {
         var el = document.createElement('h1');
         el.setAttribute('id', 'endScreen')
         el.innerHTML = `<h3>GAME OVER</h3>
-        <h2>Score: ${score}</h2>
+        <h4>Score: ${score}</h4>
                 <button id="reset">Play Again?</button>
           `;
         document.body.appendChild(el)
@@ -157,8 +162,12 @@ var timerFunc = setInterval(function () {
     }
 
     if(score > 30){
-        time -=1.6
+        time -=1.4
     }
+    if(score > 40){
+        time -=1.4
+    }
+
 
     timer.innerHTML = `Time Left: ${Math.floor(time)}`
 
