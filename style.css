@@ -35,13 +35,14 @@
 	width: 100%;
     height: 100%;
     text-align: center;
-    margin: 0 auto;
+	margin: 0 auto;
+	border: 1px solid black;
 }
 
 .main-container {
     top: 50px;
     width: 100%;;
-
+	
 
 }
 
@@ -69,8 +70,8 @@
 
 
 .key {
-	height: 250px;
-	width: 250px;
+	height: 190px;
+	width: 190px;
 	transition: 0.3s ease-in-out;
     cursor: pointer;
 }

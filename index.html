@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+    canvas {
+        border: 1px solid black;
+    }
+    </style>
     <title>Project 1 - Game</title>
 </head>
 
@@ -33,6 +38,8 @@
 
 
             <div class="keyboard">
+
+                
                 <div class="left">
                     <div class="red key colOne">
                         <audio src="sounds/bubbles.mp3" class="sound"></audio>
@@ -55,20 +62,29 @@
                         <audio src="sounds/ufo.mp3" class="sound"></audio>
                     </div>
                 </div>
+               
+                        <div class="purple key disappear third">
+                                <audio src="sounds/bubbles.mp3" class="sound"></audio>
+                            </div>
+                            <div class="turquoise key disappear third">
+                                <audio src="sounds/confetti.mp3" class="sound"></audio>
+                            </div>
+                            <div class="deepink key disappear fourth">
+                                <audio src="sounds/confetti.mp3" class="sound"></audio>
+                            </div>
+                            <div class="olive key disappear fourth">
+                                <audio src="sounds/confetti.mp3" class="sound"></audio>
+                            </div>
+               
+           
                 
-                <div class="purple key disappear third">
-                    <audio src="sounds/bubbles.mp3" class="sound"></audio>
-                </div>
-                <div class="turquoise key disappear third">
-                    <audio src="sounds/confetti.mp3" class="sound"></audio>
-                </div>
-                <audio src="sounds/wrong.wav" class="sound"></audio>
             </div>
         </div>
+        
     </div>
 
 
-
+  
 
 </body>
 <script src="app.js"></script>
