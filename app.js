@@ -12,7 +12,9 @@ var keyBoard = document.querySelector('.keyboard')
 var sounds = document.querySelectorAll('.sound')
 var leftColumn = document.querySelector('.left');
 var rightColumn = document.querySelector('.right');
-
+var startBtn = document.getElementById('start')
+var startSection = document.querySelector('.startDiv')
+var resetBtn = document.getElementById('reset')
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise', 'deeppink', 'olive'];
@@ -21,7 +23,11 @@ var score = 0;
 // Initial Game State 
 boxChanger.style.backgroundColor = centralColors[Math.floor(Math.random() * 4)]
 
-// Canvas Variables
+// Starter Function
+startBtn.addEventListener('click', function() {
+    gameContainer.classList.remove('disappear');
+    startSection.classList.add('disappear')
+})
 
 
 // This function activates if there is a match in colors, it will change the color of the central box
@@ -130,25 +136,34 @@ var changeCentralBoxColor = function () {
 
 
 // Function Timer **** Reactivate it when you want to Play 
-var time = 20000;
+var time = 3;
 var timerFunc = setInterval(function () {
 
     time--
-    if (time === 0) {
+    if (time <= 0) {
         console.log('Game Over')
         clearInterval(timerFunc)
         document.body.innerHTML = ''
         var el = document.createElement('h1');
         el.setAttribute('id', 'endScreen')
-        el.innerText = `GAME OVER
-        Score: ${score}`;
+        el.innerHTML = `<h3>GAME OVER</h3>
+        <h2>Score: ${score}</h2>
+                <button id="reset">Play Again?</button>
+          `;
         document.body.appendChild(el)
     }
+    if (score > 20) {
+        time -= 1.2
+    }
 
-    timer.innerHTML = `Time Left: ${time}`
+    if(score > 30){
+        time -=1.6
+    }
+
+    timer.innerHTML = `Time Left: ${Math.floor(time)}`
 
 
-}, 800)
+}, 950)
 
 
 
@@ -168,7 +183,7 @@ var checkMatch = function (event) {
     if (whichBox === boxChanger.style.backgroundColor) {
         changeCentralBoxColor()
 
-        time += 2
+        time += 2.5
         score++
 
         scoreDisplay.classList.add('plusscore');
@@ -201,3 +216,4 @@ keys.forEach((key, index) => {
     })
     key.style.backgroundColor = centralColors[index]
 })
+
