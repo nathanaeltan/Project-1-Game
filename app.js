@@ -9,6 +9,8 @@ var levelTwo = document.querySelectorAll('.second')
 var levelThree = document.querySelectorAll('.third')
 var keyBoard = document.querySelector('.keyboard')
 var sounds = document.querySelectorAll('.sound')
+var leftColumn = document.querySelector('.left');
+var rightColumn = document.querySelector('.right');
 
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise'];
@@ -32,16 +34,32 @@ var changeCentralBoxColor = function () {
         levelTwo.forEach((key) => {
             key.classList.remove('disappear')
         })
+       
+        keyBoard.style.flexDirection = "column";
+        leftColumn.style.display = "flex"
+        leftColumn.style.flexDirection = "column"
+        leftColumn.style.position = "absolute";
+        leftColumn.style.position = "0";
+        rightColumn.style.display = "flex"
+        rightColumn.style.flexDirection = "column"
+        rightColumn.style.position = "absolute";
+        rightColumn.style.position = "0";
+        rightColumn.style.right = "0";
 
         keys.forEach((key) => {
             key.style.order = Math.floor(Math.random() * 4) + 1
         })
-       
+
         ranNum = Math.floor(Math.random() * 6)
-        
+
         counter = ranNum
         //    Level 3 Score 21-30
     } else if (score >= 19 && score < 29) {
+        keyBoard.style.display = "block";
+        leftColumn.style.display = "block"
+        rightColumn.style.display = "block"
+        leftColumn.style.position = "relative";
+        rightColumn.style.position = "relative";
         levelThree.forEach((key) => {
             key.classList.remove('disappear')
         })
@@ -66,8 +84,8 @@ var changeCentralBoxColor = function () {
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
-            key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
-            key.style.right = Math.floor((Math.random() * 1500) + 5) + "px";
+            key.style.left = Math.floor((Math.random() * 1900) + 3) + "px";
+            key.style.right = Math.floor((Math.random() * 1900) + 5) + "px";
             key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
             counter = ranNum
         })
@@ -116,10 +134,10 @@ var checkMatch = function (event) {
     var whichBox = event.target.style.backgroundColor
     if (whichBox === boxChanger.style.backgroundColor) {
         changeCentralBoxColor()
-        
+
         time += 2
         score++
-        
+
         scoreDisplay.classList.add('plusscore');
         setTimeout(function () {
             scoreDisplay.classList.remove('plusscore')
@@ -129,7 +147,7 @@ var checkMatch = function (event) {
     } else {
         score--
         time--
-        key.style.backgroundColor = "red";
+
         scoreDisplay.classList.add('minusscore');
         setTimeout(function () {
             scoreDisplay.classList.remove('minusscore')
@@ -144,10 +162,9 @@ var checkMatch = function (event) {
 
 keys.forEach((key, index) => {
     key.addEventListener('click', checkMatch)
-    key.addEventListener('click', function() {
+    key.addEventListener('click', function () {
         sounds[index].currentTime = 0;
         sounds[index].play();
     })
     key.style.backgroundColor = centralColors[index]
 })
-
