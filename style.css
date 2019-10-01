@@ -25,7 +25,7 @@ body {
 	
 }
 .starterTitle {
-	font-size: 12rem;
+	font-size: 10rem;
 	text-align: center;
 	margin-bottom: 10px;
 }
@@ -37,6 +37,10 @@ button {
 	text-align: center;
 	border: none;
 	
+}
+.instruction-section {
+	font-size: 2rem;
+	text-align: center;
 }
 .title {
 	text-align: center;
@@ -91,9 +95,12 @@ button {
     position: relative;
     margin-top: 50px;
 	transition: 0.4s ease-in-out;
-	/* transition: 0.3s fade */
+	transition: 0.3s fade
 }
-
+.last {
+	animation: moveX 3.05s linear 0s infinite alternate, 
+	moveY 3.4s linear 0s infinite alternate;
+}
 
 .key {
 	height: 190px;
@@ -101,14 +108,15 @@ button {
 	margin-bottom: 10px;
 	transition: 0.3s ease-in-out;
 	cursor: pointer;
+	overflow: hidden;
 	/* animation: moveX 3.05s linear 0s infinite alternate, 
 	moveY 3.4s linear 0s infinite alternate; */
 }
 
 .key:hover {
     opacity: 0.7;
-    animation: shake 0.3s;
-    animation-iteration-count: infinite;
+    /* animation: shake 0.3s;
+    animation-iteration-count: infinite; */
 }
 
 #score,
@@ -189,7 +197,7 @@ button {
 	from { left: 0; } to { left: 480px; }
   }
   @keyframes moveX {
-	from { left: 0; } to { left: 1080px; }
+	from { left: -30px; } to { left: 1080px; }
 	
   }
 
@@ -203,5 +211,5 @@ button {
 	from { top: 0; } to { top: 280px; }
   }
   @keyframes moveY {
-	from { top: 0; } to { top: 280px; }
+	from { top: -10px; } to { top: 280px; }
   }

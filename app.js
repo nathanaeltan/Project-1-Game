@@ -15,6 +15,19 @@ var rightColumn = document.querySelector('.right');
 var startBtn = document.getElementById('start')
 var startSection = document.querySelector('.startDiv')
 var resetBtn = document.getElementById('reset')
+var red = document.querySelector('.red')
+var yellow = document.querySelector('.yellow')
+var green = document.querySelector('.green')
+var blue = document.querySelector('.blue')
+var orange = document.querySelector('.orange')
+var purple = document.querySelector('.purple')
+var pink = document.querySelector('.pink')
+var turquoise = document.querySelector('.turquoise')
+var olive = document.querySelector('.olive')
+var deepPink = document.querySelector('.deepink')
+var instructionDisplay = document.querySelector('.instructions')
+var instructionSect = document.querySelector('.instruction-section')
+var mainMenu = document.getElementById('main');
 
 
 // Global Variables
@@ -30,6 +43,17 @@ startBtn.addEventListener('click', function() {
     gameRun = true;
     gameContainer.classList.remove('disappear');
     startSection.classList.add('disappear')
+})
+
+// Instructions Function Display
+instructionDisplay.addEventListener('click', function() {
+    startSection.classList.add('disappear');
+    instructionSect.classList.remove('disappear');
+})
+
+mainMenu.addEventListener('click', function() {
+    startSection.classList.remove('disappear');
+    instructionSect.classList.add('disappear');
 })
 
 
@@ -122,14 +146,46 @@ var changeCentralBoxColor = function () {
         })
         
     } else if(score >= 49 ) {
-        var rand = Math.floor(Math.random() * 4)
+        setTimeout(function() {
+            red.classList.add('last')
+        }, 123)
+        setTimeout(function() {
+            yellow.classList.add('last')
+        }, 283)
+        setTimeout(function() {
+            green.classList.add('last')
+        }, 347)
+        setTimeout(function() {
+            blue.classList.add('last')
+        }, 481)
+        setTimeout(function() {
+            orange.classList.add('last')
+        }, 523)
+        setTimeout(function() {
+            pink.classList.add('last')
+        }, 675)
+        setTimeout(function() {
+            turquoise.classList.add('last')
+        }, 737)
+        setTimeout(function() {
+            olive.classList.add('last')
+        }, 888)
+        setTimeout(function() {
+            deepPink.classList.add('last')
+        }, 921)
+        setTimeout(function() {
+            purple.classList.add('last')
+        }, 1099)
+        
         keys.forEach((key) => {
             key.style.borderRadius = '50%';
             key.style.width = "70px";
             key.style.height = "70px";
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
-            key.style.animation = 'moveX 4.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate';
+            
+            key.style.padding = "30px;"
+
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
             key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
             key.style.right = Math.floor((Math.random() * 1400) + 5) + "px";
