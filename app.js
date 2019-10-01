@@ -14,7 +14,6 @@ var leftColumn = document.querySelector('.left');
 var rightColumn = document.querySelector('.right');
 var startBtn = document.getElementById('start')
 var startSection = document.querySelector('.startDiv')
-var resetBtn = document.getElementById('reset')
 var red = document.querySelector('.red')
 var yellow = document.querySelector('.yellow')
 var green = document.querySelector('.green')
@@ -29,7 +28,10 @@ var instructionDisplay = document.querySelector('.instructions')
 var instructionSect = document.querySelector('.instruction-section')
 var mainMenu = document.getElementById('main');
 
-
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
 // Global Variables
 var centralColors = ['red', 'yellow', 'green', 'blue', 'orange', 'pink', 'purple', 'turquoise', 'deeppink', 'olive'];
 var score = 0;
@@ -56,6 +58,11 @@ mainMenu.addEventListener('click', function() {
     instructionSect.classList.add('disappear');
 })
 
+
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
 
 // This function activates if there is a match in colors, it will change the color of the central box
 var changeCentralBoxColor = function () {
@@ -197,10 +204,13 @@ var changeCentralBoxColor = function () {
     boxChanger.style.backgroundColor = centralColors[counter];
 }
 
-
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
 
 // Function Timer **** Reactivate it when you want to Play 
-var time =20000;
+var time = 20;
 var timerFunc = setInterval(function () {
     if(gameRun === true) {
         time--
@@ -212,19 +222,21 @@ var timerFunc = setInterval(function () {
         document.body.innerHTML = ''
         var el = document.createElement('h1');
         el.setAttribute('id', 'endScreen')
-        el.innerHTML = `<h3>GAME OVER</h3>
-        <h4>Score: ${score}</h4>
-                <button id="reset">Play Again?</button>
+        el.innerHTML = `<h5>GAME OVER</h5>
+        <h6>Score: ${score}</h6>
+                <button id="reset">
+                <h2>Play Again?</h2></button>
           `;
         document.body.appendChild(el)
+        var resetBtn = document.getElementById('reset')
+        resetBtn.addEventListener('click', function() {
+            window.location.reload()
+        })
     }
-    if (score > 20) {
+    if (score > 20 && score <= 40) {
         time -= 1.2
     }
 
-    if(score > 30){
-        time -=1.25
-    }
     if(score > 40){
         time -=1.28
     }
@@ -238,7 +250,10 @@ var timerFunc = setInterval(function () {
 
 
 
-
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
 
 
 // This Function displays Score 
@@ -259,7 +274,7 @@ var checkMatch = function (event) {
         scoreDisplay.classList.add('plusscore');
         setTimeout(function () {
             scoreDisplay.classList.remove('plusscore')
-        }, 300);
+        }, 400);
         keepScore()
 
     } else {
@@ -269,12 +284,17 @@ var checkMatch = function (event) {
         scoreDisplay.classList.add('minusscore');
         setTimeout(function () {
             scoreDisplay.classList.remove('minusscore')
-        }, 300);
+        }, 400);
         keepScore()
 
     }
 
 }
+
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
+/********************************************************** */
 
 // When I click on the keyboard, it will check if the background color of the keyboard and the background color of the boxChanger is the same. If it is the same, the Central Box will change Color, and a score will be added. 
 
@@ -283,7 +303,7 @@ keys.forEach((key, index) => {
     key.addEventListener('click', function () {
         sounds[index].currentTime = 0;
         sounds[index].play();
-        key.style.transition = "fa"
+        
     })
     key.style.backgroundColor = centralColors[index]
 })

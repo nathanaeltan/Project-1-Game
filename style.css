@@ -146,12 +146,15 @@ button {
 
 .plusscore {
     background-color: green;
-    transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	color: lightgreen;
+
 }
 
 .minusscore {
     background-color: red;
-    transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	color: lightpink;
 
 }
 
