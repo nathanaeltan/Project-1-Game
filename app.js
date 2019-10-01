@@ -234,6 +234,9 @@ var timerFunc = setInterval(function () {
     if (score > 20 && score <= 40) {
         time -= 1.2
     }
+    if(score > 40 ) {
+        time -= 1.3
+    }
 
     
 

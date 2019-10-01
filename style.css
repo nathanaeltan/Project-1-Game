@@ -200,7 +200,7 @@ button {
 	from { left: 0; } to { left: 480px; }
   }
   @keyframes moveX {
-	from { left: -30px; } to { left: 1080px; }
+	from { left: -30px; } to { left: 1100px; }
 	
   }
 
