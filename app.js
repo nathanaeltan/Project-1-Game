@@ -27,6 +27,9 @@ var deepPink = document.querySelector(".deepink");
 var instructionDisplay = document.querySelector(".instructions");
 var instructionSect = document.querySelector(".instruction-section");
 var mainMenu = document.getElementById("main");
+var namePrompt = document.querySelector('.askName')
+var playerName = document.getElementById('name')
+var nameDisplay = document.getElementById('nameHolder')
 
 /********************************************************** */
 /********************************************************** */
@@ -47,16 +50,23 @@ var centralColors = [
 ];
 var score = 0;
 var gameRun = false;
+var name = "";
 
 // Initial Game State
 boxChanger.style.backgroundColor = centralColors[Math.floor(Math.random() * 4)];
 
 // Starter Function
 startBtn.addEventListener("click", function () {
-    gameRun = true;
-    gameContainer.classList.remove("disappear");
+    gameRun = false;
+    // gameContainer.classList.remove("disappear");
     startSection.classList.add("disappear");
+    namePrompt.classList.remove('disappear')
 });
+
+
+
+
+
 
 // Instructions Function Display
 instructionDisplay.addEventListener("click", function () {
@@ -67,7 +77,22 @@ instructionDisplay.addEventListener("click", function () {
 mainMenu.addEventListener("click", function () {
     startSection.classList.remove("disappear");
     instructionSect.classList.add("disappear");
+   
 });
+
+playerName.addEventListener('keypress', function(e) {
+    var key = e.which || e.keyCode
+    if( key === 13) {
+        name = e.target.value
+        console.log(name)
+        gameContainer.classList.remove("disappear");
+        namePrompt.classList.add('disappear')
+        gameRun = true;
+        nameDisplay.innerText = `Player: ${name}`
+        nameDisplay.style.borderBottom = "1px solid black"
+    }
+   
+})
 
 /********************************************************** */
 /********************************************************** */
@@ -224,12 +249,13 @@ var timerFunc = setInterval(function () {
         console.log("Game Over");
         clearInterval(timerFunc);
         document.body.innerHTML = "";
-        var el = document.createElement("h1");
+        var el = document.createElement("div");
         el.setAttribute("id", "endScreen");
-        el.innerHTML = `<h5>GAME OVER</h5>
+        el.innerHTML = `<h6 style="text-decoration: underline">GAME OVER</h6>
+        <h6 >Player: ${name}</h6>
         <h6>Score: ${score}</h6>
                 <button id="reset">
-                <h2>Play Again?</h2></button>
+                <h4>Play Again?</h4></button>
           `;
         document.body.appendChild(el);
         var resetBtn = document.getElementById("reset");

@@ -144,6 +144,17 @@ button {
     
 }
 
+.askName {
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 100px;
+}
+
+#name {
+font-size: 3rem;
+text-align: center;
+margin-top: 20px;
+}
 #score,
 #timer {
 	font-size: 3rem;
@@ -166,7 +177,13 @@ button {
 #endScreen {
 	font-size: 10rem;
 	text-align: center;
-	margin-top: 200px;
+	margin-top: 100px;
+}
+#nameholder {
+	font-size: 2rem;
+}
+.name-container {
+	font-size: 2rem;
 }
 
 .plusscore {
@@ -182,7 +199,7 @@ button {
 	color: lightpink;
 
 }
-
+#res
 #reset:hover {
 	background-color: #C1E8E8;
 	transition: 0.5s ease-in-out;

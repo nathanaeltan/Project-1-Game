@@ -13,7 +13,9 @@ The DOM manipulation also involves changing the layout of the elements on the sc
 **********************************************************
 
 Approach Taken: 
+
 1.) Created a function that checks if the key clicked has the same background color as the central box color being flashed. 
+
 2.) If this was true, another function would change the central box color to another color in an array. The central box color is randomly looping through the array of colors. 
 
 3.) As the score goes up, more divs are revealed and more colors are added by increasing the length of the central box color array. 
