@@ -170,28 +170,26 @@ var changeCentralBoxColor = function () {
         }, 523)
         setTimeout(function() {
             pink.classList.add('last')
-        }, 675)
+        }, 275)
         setTimeout(function() {
             turquoise.classList.add('last')
-        }, 737)
+        }, 237)
         setTimeout(function() {
             olive.classList.add('last')
-        }, 888)
+        }, 488)
         setTimeout(function() {
             deepPink.classList.add('last')
-        }, 921)
+        }, 321)
         setTimeout(function() {
             purple.classList.add('last')
-        }, 1099)
+        }, 199)
         
         keys.forEach((key) => {
             key.style.borderRadius = '50%';
-            key.style.width = "70px";
-            key.style.height = "70px";
+            key.style.width = "100px";
+            key.style.height = "100px";
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
-            
-            key.style.padding = "30px;"
 
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
             key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
@@ -237,9 +235,7 @@ var timerFunc = setInterval(function () {
         time -= 1.2
     }
 
-    if(score > 40){
-        time -=1.28
-    }
+    
 
 
     timer.innerHTML = `Time Left: ${Math.floor(time)}`
