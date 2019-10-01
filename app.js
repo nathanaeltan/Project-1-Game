@@ -86,8 +86,8 @@ var changeCentralBoxColor = function () {
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
-            key.style.left = Math.floor((Math.random() * 1600) + 3) + "px";
-            key.style.right = Math.floor((Math.random() * 1600) + 5) + "px";
+            key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
+            key.style.right = Math.floor((Math.random() * 1400) + 5) + "px";
             key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
         })
         ranNum = Math.floor(Math.random() * 6)
@@ -100,14 +100,15 @@ var changeCentralBoxColor = function () {
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
-            key.style.left = Math.floor((Math.random() * 1600) + 3) + "px";
-            key.style.right = Math.floor((Math.random() * 1600) + 5) + "px";
+            key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
+            key.style.right = Math.floor((Math.random() * 1400) + 5) + "px";
             key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
             ranNum = Math.floor(Math.random() * 6)
             counter = ranNum
         })
         
     } else if(score >= 39 && score < 49) {
+        
         keys.forEach((key) => {
             levelFour.forEach((key) => {
                 key.classList.remove('disappear')
@@ -115,19 +116,23 @@ var changeCentralBoxColor = function () {
             key.style.borderRadius = '0';
             key.style.width = "100px"
             key.style.height = "100px"
+            
              
             counter = Math.floor(Math.random() * 8)
         })
         
     } else if(score >= 49 ) {
+        var rand = Math.floor(Math.random() * 4)
         keys.forEach((key) => {
+            key.style.borderRadius = '50%';
             key.style.width = "70px";
             key.style.height = "70px";
             key.style.marginLeft = "auto"
             key.style.marginRight = "auto"
+            key.style.animation = 'moveX 4.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate';
             key.style.top = Math.floor((Math.random() * 80) + 1) + "px";
-            key.style.left = Math.floor((Math.random() * 1600) + 3) + "px";
-            key.style.right = Math.floor((Math.random() * 1600) + 5) + "px";
+            key.style.left = Math.floor((Math.random() * 1400) + 3) + "px";
+            key.style.right = Math.floor((Math.random() * 1400) + 5) + "px";
             key.style.bottom = Math.floor((Math.random() * 100) + 1) + "px";
             ranNum = Math.floor(Math.random() * 6)
             counter = ranNum
@@ -162,10 +167,10 @@ var timerFunc = setInterval(function () {
     }
 
     if(score > 30){
-        time -=1.4
+        time -=1.25
     }
     if(score > 40){
-        time -=1.4
+        time -=1.28
     }
 
 
@@ -222,6 +227,7 @@ keys.forEach((key, index) => {
     key.addEventListener('click', function () {
         sounds[index].currentTime = 0;
         sounds[index].play();
+        key.style.transition = "fa"
     })
     key.style.backgroundColor = centralColors[index]
 })

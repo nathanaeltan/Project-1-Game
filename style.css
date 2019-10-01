@@ -7,6 +7,7 @@
 }
 
 
+
 .container,
 body {
 	display: flex;
@@ -34,18 +35,19 @@ button {
 }
 .starterbuttons {
 	text-align: center;
+	border: none;
 	
 }
 .title {
 	text-align: center;
-	margin: 50px 0;
+	margin: 20px 0;
     font-size: 1.5rem;
 
 }
 
 .central-color {
-	height: 150px;
-	width: 400px;
+	height: 100px;
+	width: 300px;
 	text-align: center;
 	transition: 0.3s ease-in-out;
 
@@ -88,15 +90,19 @@ button {
 	justify-content: center;
     position: relative;
     margin-top: 50px;
-	transition: 0.3s ease-in-out;
+	transition: 0.4s ease-in-out;
+	/* transition: 0.3s fade */
 }
 
 
 .key {
-	height: 250px;
-	width: 250px;
+	height: 190px;
+	width: 190px;
+	margin-bottom: 10px;
 	transition: 0.3s ease-in-out;
-    cursor: pointer;
+	cursor: pointer;
+	/* animation: moveX 3.05s linear 0s infinite alternate, 
+	moveY 3.4s linear 0s infinite alternate; */
 }
 
 .key:hover {
@@ -172,3 +178,30 @@ button {
 .pulse {
 	animation: pulse 0.2s 1 ease-out;
 }
+
+@-webkit-keyframes moveX {
+	from { left: 0; } to { left: 880px; }
+  }
+  @-moz-keyframes moveX {
+	from { left: 0; } to { left: 480px; }
+  }
+  @-o-keyframes moveX {
+	from { left: 0; } to { left: 480px; }
+  }
+  @keyframes moveX {
+	from { left: 0; } to { left: 1080px; }
+	
+  }
+
+  @-webkit-keyframes moveY {
+	from { top: 0; } to { top: 280px; }
+  }
+  @-moz-keyframes moveY {
+	from { top: 0; } to { top: 280px; }
+  }
+  @-o-keyframes moveY {
+	from { top: 0; } to { top: 280px; }
+  }
+  @keyframes moveY {
+	from { top: 0; } to { top: 280px; }
+  }
