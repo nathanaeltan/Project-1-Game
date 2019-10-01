@@ -14,12 +14,14 @@
     <!-- <embed loop="true" hidden="true" src="./sounds/backtrack.mp3" > -->
     <div class="startDiv ">
         <h1 class="starterTitle">
-        <span style="color: red">C</span>   
-        <span style="color: yellow">O</span>   
-        <span style="color: green">L</span>   
-        <span style="color: blue">O</span>   
-        <span style="color: orange">R</span>  
-        <br> 
+            <div class="word">
+                    <span style="color: red">C</span>   
+                    <span style="color: yellow">O</span>   
+                    <span style="color: green">L</span>   
+                    <span style="color: blue">O</span>   
+                    <span style="color: orange">R</span> 
+            </div>
+        
         <span style="color: pink">M</span>   
         <span style="color: purple">A</span>   
         <span style="color: turquoise">T</span>   
@@ -40,7 +42,7 @@
             <h1 style="padding: 30px 0; text-decoration: underline">Instructions</h1>
             <p>Tap the correct boxes as quickly as possible</p>
             <br>
-            <p>But Be careful, a wrong tap will minus score and Time</p>
+            <p>But <strong>Be careful</strong>, a wrong tap will minus score and Time</p>
 
             <h2 style="padding-top: 30px">GOOD LUCK!</h2>
             <button id="main" style="margin-top: 30px">
@@ -72,41 +74,41 @@
 
 
                 <div class="left">
-                    <div class="red key colOne ">
+                    <div class="red key colOne hover">
                         <audio src="sounds/bubbles.mp3" class="sound"></audio>
                     </div>
-                    <div class="yellow key colOne ">
+                    <div class="yellow key colOne hover">
                         <audio src="sounds/clay.mp3" class="sound"></audio>
                     </div>
-                    <div class="green key colOne">
+                    <div class="green key colOne hover">
                         <audio src="sounds/confetti.mp3" class="sound"></audio>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="blue key colTwo">
+                    <div class="blue key colTwo hover">
                         <audio src="sounds/glimmer.mp3" class="sound"></audio>
                     </div>
-                    <div class="pink key disappear second colTwo">
+                    <div class="pink key disappear second colTwo hover">
                         <audio src="sounds/moon.mp3" class="sound"></audio>
                     </div>
-                    <div class="orange key disappear second colTwo">
+                    <div class="orange key disappear second colTwo hover">
                         <audio src="sounds/ufo.mp3" class="sound"></audio>
                     </div>
                 </div>
 
-                <div class="purple key disappear third">
+                <div class="purple key disappear third hover">
                     <audio src="sounds/bubbles.mp3" class="sound"></audio>
                 </div>
-                <div class="turquoise key disappear third">
+                <div class="turquoise key disappear third hover">
                     <audio src="sounds/confetti.mp3" class="sound"></audio>
                 </div>
-                <div class="deepink key disappear fourth">
+                <div class="deepink key disappear fourth hover">
                     <audio src="sounds/moon.mp3" class="sound"></audio>
                 </div>
-                <div class="olive key disappear fourth">
+                <div class="olive key disappear fourth hover">
                     <audio src="sounds/clay.mp3" class="sound"></audio>
                 </div>
-
+                <audio src="sounds/wrong.wav"></audio>
 
 
             </div>
