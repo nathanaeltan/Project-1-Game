@@ -191,7 +191,7 @@ var changeCentralBoxColor = function () {
         }, 283);
         setTimeout(function () {
             green.classList.add("last");
-        }, 347);
+        }, 547);
         setTimeout(function () {
             blue.classList.add("last");
         }, 481);
@@ -200,7 +200,7 @@ var changeCentralBoxColor = function () {
         }, 523);
         setTimeout(function () {
             pink.classList.add("last");
-        }, 275);
+        }, 175);
         setTimeout(function () {
             turquoise.classList.add("last");
         }, 237);
@@ -212,7 +212,7 @@ var changeCentralBoxColor = function () {
         }, 321);
         setTimeout(function () {
             purple.classList.add("last");
-        }, 199);
+        }, 699);
 
         keys.forEach(key => {
             key.classList.remove('hover')
