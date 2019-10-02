@@ -251,7 +251,7 @@ var timerFunc = setInterval(function () {
         document.body.innerHTML = "";
         var el = document.createElement("div");
         el.setAttribute("id", "endScreen");
-        el.innerHTML = `<h6 style="text-decoration: underline">GAME OVER</h6>
+        el.innerHTML = `<h6 style="border-bottom: 1px solid black">GAME OVER</h6>
         <h6 >Player: ${name}</h6>
         <h6>Score: ${score}</h6>
                 <button id="reset">
