@@ -27,9 +27,9 @@ var deepPink = document.querySelector(".deepink");
 var instructionDisplay = document.querySelector(".instructions");
 var instructionSect = document.querySelector(".instruction-section");
 var mainMenu = document.getElementById("main");
-var namePrompt = document.querySelector('.askName')
-var playerName = document.getElementById('name')
-var nameDisplay = document.getElementById('nameHolder')
+var namePrompt = document.querySelector('.askName');
+var playerName = document.getElementById('name');
+var nameDisplay = document.getElementById('nameHolder');
 
 /********************************************************** */
 /********************************************************** */
@@ -77,12 +77,12 @@ instructionDisplay.addEventListener("click", function () {
 mainMenu.addEventListener("click", function () {
     startSection.classList.remove("disappear");
     instructionSect.classList.add("disappear");
-   
+
 });
 
-playerName.addEventListener('keypress', function(e) {
+playerName.addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode
-    if( key === 13) {
+    if (key === 13) {
         name = e.target.value
         console.log(name)
         gameContainer.classList.remove("disappear");
@@ -91,7 +91,7 @@ playerName.addEventListener('keypress', function(e) {
         nameDisplay.innerText = `Player: ${name}`
         nameDisplay.style.borderBottom = "1px solid black"
     }
-   
+
 })
 
 /********************************************************** */
@@ -182,7 +182,7 @@ var changeCentralBoxColor = function () {
             counter = Math.floor(Math.random() * 8);
         });
     } else if (score >= 49) {
-        
+
         setTimeout(function () {
             red.classList.add("last");
         }, 123);
