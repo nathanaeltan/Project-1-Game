@@ -3,7 +3,7 @@
 var boxChanger = document.querySelector(".central-color");
 var scoreDisplay = document.getElementById("score");
 var timer = document.getElementById("timer");
-var gameContainer = document.querySelector(".container");
+var gameContainer = document.querySelector(".container-main");
 var keys = document.querySelectorAll(".key");
 var levelTwo = document.querySelectorAll(".second");
 var levelThree = document.querySelectorAll(".third");
@@ -104,12 +104,12 @@ var changeCentralBoxColor = function () {
     var counter = 0;
     var ranNum = Math.floor(Math.random() * centralColors.length);
     // Level 1 Score 0 - 10
-    if (score > 0 && score <= 9) {
+    if (score > 0 && score <= 4) {
         ranNum = Math.floor(Math.random() * 4);
         counter = ranNum;
 
         // Level 2 Score 11 - 20
-    } else if (score > 9 && score < 19) {
+    } else if (score > 4 && score < 9) {
         levelTwo.forEach(key => {
             key.classList.remove("disappear");
         });
@@ -133,7 +133,7 @@ var changeCentralBoxColor = function () {
 
         counter = ranNum;
         //    Level 3 Score 20-29
-    } else if (score >= 19 && score < 29) {
+    } else if (score >= 9 && score < 14) {
         keyBoard.style.display = "block";
         leftColumn.style.display = "block";
         rightColumn.style.display = "block";
@@ -157,7 +157,7 @@ var changeCentralBoxColor = function () {
         ranNum = Math.floor(Math.random() * 6);
         counter = ranNum;
         // Level 4 30 - 39
-    } else if (score >= 29 && score < 39) {
+    } else if (score >= 14 && score < 19) {
         keys.forEach(key => {
             key.style.width = "70px";
             key.style.height = "70px";
@@ -170,7 +170,7 @@ var changeCentralBoxColor = function () {
             ranNum = Math.floor(Math.random() * 6);
             counter = ranNum;
         });
-    } else if (score >= 39 && score < 49) {
+    } else if (score >= 19 && score < 24) {
         keys.forEach(key => {
             levelFour.forEach(key => {
                 key.classList.remove("disappear");
@@ -181,37 +181,37 @@ var changeCentralBoxColor = function () {
 
             counter = Math.floor(Math.random() * 8);
         });
-    } else if (score >= 49) {
+    } else if (score >= 24) {
 
         setTimeout(function () {
-            red.classList.add("last");
+            red.classList.add("last1");
         }, 123);
         setTimeout(function () {
-            yellow.classList.add("last");
+            yellow.classList.add("last2");
         }, 283);
         setTimeout(function () {
-            green.classList.add("last");
+            green.classList.add("last3");
         }, 547);
         setTimeout(function () {
-            blue.classList.add("last");
+            blue.classList.add("last4");
         }, 481);
         setTimeout(function () {
-            orange.classList.add("last");
+            orange.classList.add("last1");
         }, 523);
         setTimeout(function () {
-            pink.classList.add("last");
+            pink.classList.add("last2");
         }, 175);
         setTimeout(function () {
-            turquoise.classList.add("last");
+            turquoise.classList.add("last3");
         }, 237);
         setTimeout(function () {
-            olive.classList.add("last");
+            olive.classList.add("last4");
         }, 488);
         setTimeout(function () {
-            deepPink.classList.add("last");
+            deepPink.classList.add("last1");
         }, 321);
         setTimeout(function () {
-            purple.classList.add("last");
+            purple.classList.add("last2");
         }, 699);
 
         keys.forEach(key => {
@@ -239,7 +239,7 @@ var changeCentralBoxColor = function () {
 /********************************************************** */
 
 // Function Timer **** Reactivate it when you want to Play
-var time = 20;
+var time = 200000;
 var timerFunc = setInterval(function () {
     if (gameRun === true) {
         time--;

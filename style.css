@@ -7,8 +7,10 @@
 }
 
 
-
-.container,
+.container {
+	max-width: 100%;
+}
+.container-main,
 body {
 	display: flex;
 	justify-content: center;
@@ -121,9 +123,21 @@ button {
 	transition: 0.4s ease-in-out;
 	transition: 0.3s fade
 }
-.last {
-	animation: moveX 3.9s linear 0s infinite alternate, 
-	moveY 4s linear 0s infinite alternate;
+.last1 {
+	animation: moveX1 3.9s linear 0s infinite alternate, 
+	moveY1 4s linear 0s infinite alternate;
+}
+.last2{
+	animation: moveX2 3s linear 0s infinite alternate, 
+	moveY2 4.4s linear 0s infinite alternate;
+}
+.last3{
+	animation: moveX3 3.2s linear 0s infinite alternate, 
+	moveY3 4s linear 0s infinite alternate;
+}
+.last4{
+	animation: moveX4 3.3s linear 0s infinite alternate, 
+	moveY4 3s linear 0s infinite alternate;
 }
 
 .key {
@@ -205,17 +219,6 @@ margin-top: 20px;
 	transition: 0.5s ease-in-out;
 }
 
-@keyframes pulse {
-	from {
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 1),
-			0 0 0 0 rgba(51, 51, 51, 1);
-	}
-
-	to {
-		box-shadow: 0 0 0 0.65em rgba(255, 255, 255, 1),
-			0 0 0 1em rgba(51, 51, 51, 0);
-	}
-}
 
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -237,29 +240,30 @@ margin-top: 20px;
 	animation: pulse 0.2s 1 ease-out;
 }
 
-@-webkit-keyframes moveX {
-	from { left: 0; } to { left: 880px; }
-  }
-  @-moz-keyframes moveX {
-	from { left: 0; } to { left: 480px; }
-  }
-  @-o-keyframes moveX {
-	from { left: 0; } to { left: 480px; }
-  }
-  @keyframes moveX {
+
+  
+  @keyframes moveX1 {
 	from { left: -30px; } to { left: 1100px; }
-	
+  }
+  @keyframes moveY1 {
+	from { top: -10px; } to { top: 280px; }
   }
 
-  @-webkit-keyframes moveY {
-	from { top: 0; } to { top: 280px; }
+  @keyframes moveX2 {
+	from { left: -10px; } to { left: 800px; }
   }
-  @-moz-keyframes moveY {
-	from { top: 0; } to { top: 280px; }
+  @keyframes moveY2 {
+	from { top: -5px; } to { top: 243px; }
   }
-  @-o-keyframes moveY {
-	from { top: 0; } to { top: 280px; }
+  @keyframes moveX3 {
+	from { left: -25px; } to { left: 1000px; }
   }
-  @keyframes moveY {
-	from { top: -10px; } to { top: 280px; }
+  @keyframes moveY3 {
+	from { top: -15px; } to { top: 200px; }
+  }
+  @keyframes moveX4 {
+	from { left: -10px; } to { left: 987px; }
+  }
+  @keyframes moveY4 {
+	from { top: -5px; } to { top: 270px; }
   }
