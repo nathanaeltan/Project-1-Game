@@ -20,6 +20,149 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
+#logo:nth-child(1) {
+	background-color: 
+}
+
+#logo path:nth-child(1) {
+	stroke-dasharray: 706;
+	stroke-dashoffset: 706;
+	animation:  fillRed 0.5s ease forwards 2.5s, line-animation 2s ease forwards;
+	
+}
+
+#logo path:nth-child(2) {
+	stroke-dasharray: 607;
+	stroke-dashoffset: 607;
+	animation: fillYellow 0.5s ease forwards 2.5s, line-animation 2s ease forwards;
+}	
+#logo path:nth-child(3) {
+	stroke-dasharray: 345.54;
+	stroke-dashoffset: 345.54;
+	animation:  fillGreen 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+#logo path:nth-child(4) {
+	stroke-dasharray: 558;
+	stroke-dashoffset: 558;
+	animation: fillOrange 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+#logo path:nth-child(5) {
+	stroke-dasharray: 350.71;
+	stroke-dashoffset: 350.71;
+	animation: fillPurple 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+#logo path:nth-child(6) {
+	stroke-dasharray: 1085;
+	stroke-dashoffset: 1085;
+	animation: fillTurq 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+#logo path:nth-child(7) {
+	stroke-dasharray: 659.5;
+	stroke-dashoffset: 659.5;
+	animation: fillOlive 0.5s ease forwards 2.5s, line-animation 2s ease forwards;
+}
+#logo path:nth-child(8) {
+	stroke-dasharray: 444.04;
+	stroke-dashoffset: 444.04;
+	animation: fillDeepPink 0.5s ease forwards 2.5s, line-animation 2s ease forwards;
+}
+#logo path:nth-child(9) {
+	stroke-dasharray: 554;
+	stroke-dashoffset: 554;
+	animation: fillBlue 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+#logo path:nth-child(10) {
+	stroke-dasharray: 681;
+	stroke-dashoffset: 681;
+	animation: fillPink 0.5s ease forwards 2.5s,line-animation 2s ease forwards;
+}
+
+@keyframes line-animation {
+	to{
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes fillRed {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: red;
+	}
+}
+@keyframes fillYellow {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: Yellow;
+	}
+}
+@keyframes fillGreen {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: green;
+	}
+}
+@keyframes fillOrange {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: orange;
+	}
+}
+@keyframes fillPurple {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: purple;
+	}
+}
+@keyframes fillTurq {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: turquoise;
+	}
+}
+@keyframes fillBlue {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: blue;
+	}
+}
+@keyframes fillOlive {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: olive;
+	}
+}
+@keyframes fillDeepPink {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: deeppink;
+	}
+}
+@keyframes fillPink {
+	from {
+		fill: transparent;
+	}
+	to {
+		fill: pink;
+	}
+}
+
 
 .startDiv {
 	display: inline-block;
@@ -47,7 +190,7 @@ button {
 	
 }
 .instruction-section {
-	font-size: 2rem;
+	font-size: 3rem;
 	text-align: center;
 }
 .instructions {
@@ -250,20 +393,20 @@ margin-top: 20px;
   }
 
   @keyframes moveX2 {
-	from { left: -10px; } to { left: 800px; }
+	from { left: -10px; } to { left: 1200px; }
   }
   @keyframes moveY2 {
 	from { top: -5px; } to { top: 243px; }
   }
   @keyframes moveX3 {
-	from { left: -25px; } to { left: 1000px; }
+	from { left: -25px; } to { left: 1320px; }
   }
   @keyframes moveY3 {
 	from { top: -15px; } to { top: 200px; }
   }
   @keyframes moveX4 {
-	from { left: -10px; } to { left: 987px; }
+	from { left: -10px; } to { left: 1000px; }
   }
   @keyframes moveY4 {
-	from { top: -5px; } to { top: 270px; }
+	from { top: -5px; } to { top: 290px; }
   }

@@ -30,7 +30,7 @@ var mainMenu = document.getElementById("main");
 var namePrompt = document.querySelector('.askName');
 var playerName = document.getElementById('name');
 var nameDisplay = document.getElementById('nameHolder');
-
+const logo =  document.querySelectorAll('#logo path')
 /********************************************************** */
 /********************************************************** */
 /********************************************************** */
@@ -324,3 +324,7 @@ keys.forEach((key, index) => {
     });
     key.style.backgroundColor = centralColors[index];
 });
+
+for(let i = 0; i<logo.length; i++) {
+    console.log(`Letter: ${i} is ${logo[i].getTotalLength()}`)
+}
